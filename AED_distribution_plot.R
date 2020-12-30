@@ -1,8 +1,7 @@
 ## plot AED
 ## grep '>' *maker.proteins.fasta | awk '{print $1":"$4}' | perl -ne '@array=split(":", $_); @name=split("-",$array[0]);print $name[1]."\t".$array[2];' > eAED_statistics*
 setwd("")
-rm(list=ls())
-
+library(ggplot2)
 ## Frequency function
 get_Freq <- function(table2check) {
   
@@ -22,6 +21,7 @@ AED1 <- read.table(file2check)
 mean_AED1 = mean(AED1$V2)
 median_AED1 = median(AED1$V2)
 cumfreq_Ret1 <- get_Freq(AED1)
+breaks = seq(0, 1, by=0.02) 
 
 qplot(breaks,cumfreq_Ret1,geom='line',ylab="Cummulative Fraction of Annotation", xlab="AED")+
   theme_bw()
