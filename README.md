@@ -6,14 +6,14 @@ When we get the mark2 resultes like \*.protein.fa or \*.transcripts.fa, just fol
 
 if you plot AED:
 ```bash
-grep '>' *maker.proteins.fasta | awk '{print $1":"$4}' | perl -ne '@array=split(":", $_); @name=split("-",$array[0]);print $name[1]."\t".$array[2];' > AED_statistics*
+grep '>' *maker.proteins.fasta | awk '{print $1":"$4}' | perl -ne '@array=split(":", $_); @name=split("-",$array[0]);print $name[1]."\t".$array[2];' > Aed.output
 ```
 if you plot eAED:
 ```bash
-grep '>' *maker.proteins.fasta | awk '{print $1":"$5}' | perl -ne '@array=split(":", $_); @name=split("-",$array[0]);print $name[1]."\t".$array[2];' > eAED_statistics*
+grep '>' *maker.proteins.fasta | awk '{print $1":"$5}' | perl -ne '@array=split(":", $_); @name=split("-",$array[0]);print $name[1]."\t".$array[2];' > eAed.output
 ```
 
-Then you can use ```AED_distribution_plot.R``` to plot AED distribution
+Then you can use **Aed.output** and ```AED_distribution_plot.R``` to plot AED distribution
 
 Figure：
 
