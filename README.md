@@ -14,3 +14,8 @@ grep '>' *maker.proteins.fasta | awk '{print $1":"$5}' | perl -ne '@array=split(
 ```
 
 Then you can use ```AED_distribution_plot.R``` to plot AED distribution
+
+Figure：
+
+<img src="https://github.com/LQHHHHH/AED-distribution-plot/blob/main/AED_dist.png"  alt="" align=center />
+
